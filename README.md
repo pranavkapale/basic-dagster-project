@@ -1,57 +1,55 @@
-# Introduction
+# Basic Dagster Project
 
-Project for learning basic dagster
+## 📌 Overview
+This project is designed for learning the basics of [Dagster](https://dagster.io/), a data orchestrator for machine learning, analytics, and ETL. It demonstrates how to scaffold a Dagster project and build assets, jobs, schedules, and sensors.
 
-This is a [Dagster](https://dagster.io/) project scaffolded with [`dagster project scaffold`](https://docs.dagster.io/guides/build/projects/creating-a-new-project).
+**Key Features:**
+* **Dagster UI:** Provides a web-based interface for managing and monitoring pipelines.
+* **Asset Development:** Assets are defined in `car_data/assets.py` and automatically loaded.
+* **Testing:** Unit tests are included in the `car_data_tests` directory.
+* **Scheduling:** Supports schedules and sensors for job automation.
 
-## Getting started
+## 🏗 Architecture
+1. **Code Location:** The Dagster code location is scaffolded and installed as a Python package.
+2. **Assets:** Assets are defined in Python and loaded dynamically.
+3. **Testing:** Unit tests are written using `pytest`.
+4. **Schedules and Sensors:** Automate job execution with Dagster Daemon.
 
-First, install your Dagster code location as a Python package. By using the --editable flag, pip will install your Python package in ["editable mode"](https://pip.pypa.io/en/latest/topics/local-project-installs/#editable-installs) so that as you develop, local code changes will automatically apply.
+## 🛠 Tech Stack
+* **Language:** Python
+* **Orchestration:** Dagster
+* **Testing Framework:** Pytest
 
-```bash
-pip install -e ".[dev]"
-```
+## 🚀 How to Run
 
-Then, start the Dagster UI web server:
+### Prerequisites
+* Python installed on your system.
+* Install the project dependencies.
 
-```bash
-dagster dev
-```
+### Steps
+1. **Install the project as a Python package:**
+    ```bash
+    pip install -e ".[dev]"
+    ```
 
-Open http://localhost:3000 with your browser to see the project.
+2. **Start the Dagster UI web server:**
+    ```bash
+    dagster dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) in your browser to access the Dagster UI.
 
-You can start writing assets in `car_data/assets.py`. The assets are automatically loaded into the Dagster code location as you define them.
+3. **Run Unit Tests:**
+    ```bash
+    pytest car_data_tests
+    ```
 
-## Development
+## 📊 Dataset
+The dataset used in this project can be found under the Microsoft Azure [carprice](https://github.com/Azure/carprice/blob/master/dataset/carprice.csv) project.
 
-### Adding new Python dependencies
+## Additional Info
 
-You can specify new Python dependencies in `setup.py`.
+### Schedules and Sensors
+To enable [Schedules](https://docs.dagster.io/guides/automate/schedules/) or [Sensors](https://docs.dagster.io/guides/automate/sensors/), ensure the [Dagster Daemon](https://docs.dagster.io/guides/deploy/execution/dagster-daemon) process is running. This is done automatically when you run `dagster dev`.
 
-### Unit testing
-
-Tests are in the `car_data_tests` directory and you can run tests using `pytest`:
-
-```bash
-pytest car_data_tests
-```
-
-### Schedules and sensors
-
-If you want to enable Dagster [Schedules](https://docs.dagster.io/guides/automate/schedules/) or [Sensors](https://docs.dagster.io/guides/automate/sensors/) for your jobs, the [Dagster Daemon](https://docs.dagster.io/guides/deploy/execution/dagster-daemon) process must be running. This is done automatically when you run `dagster dev`.
-
-Once your Dagster Daemon is running, you can start turning on schedules and sensors for your jobs.
-
-## Deploy on Dagster+
-
-The easiest way to deploy your Dagster project is to use Dagster+.
-
-Check out the [Dagster+ documentation](https://docs.dagster.io/dagster-plus/) to learn more.
-
-#  car_data
-
-Dataset Can be found under Microsoft Azure [carprice](https://github.com/Azure/carprice/blob/master/dataset/carprice.csv) project
-
-## Acknowledgments
-
+## 📚 Acknowledgments
 Special thanks to the YouTube channel [BugBytes](https://www.youtube.com/@bugbytes3923) for their helpful video tutorial: ["Dagster Tutorial"](https://youtu.be/sKqDq4TFbmY?si=z9qTLQ1BuGLl1LWB).
